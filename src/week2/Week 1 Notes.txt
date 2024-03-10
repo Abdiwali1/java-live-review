@@ -1,0 +1,404 @@
+4/10/2024
+
+Week 2
+Java Day01 - Introduction to IntelliJ & Java Programming
+Java Day02 - Variables & Data Types
+__________________________________________________________________
+
+IntelliJ
+main method
+print statements
+escape sequences
+datatypes
+variables
+String
+char
+concatenation
+__________________________________________________________________
+
+Each week I will share: (check the #weekly_plan channel)
+	video to outline the new modules, terminology videos, quizzes
+		code from the videos
+	practice tasks/ solutions - code & video
+	hands on practice /solutions - code only
+__________________________________________________________________
+
+Shortcuts
+
+	main method: main
+	print statement: sout
+	print for variable: soutv
+
+	comments
+		select line/s that you want to comment then use the shortcut
+			windows: control + /
+			mac: command + /
+
+	formatting the code
+		windows: ctrl + alt + L
+		mac: command + option + L
+
+	How to rename something
+		right click -> Refactor -> rename
+__________________________________________________________________
+
+	What is the different between JDK, JRE, JVM
+
+		JDK: Java development kit
+			allows you to write java code
+			contains the JRE and JVM, and compiler
+
+		JRE: Java runtime environment
+			contains JVM, JRE libraries(files), which allows java code to be run
+
+		JVM: Java virtual machine
+			runs the java code
+			interprets the bytecode to binary
+
+	Why are we using JDK 17?
+		it is a LTS version. Long term support version
+		these versions are supported for long periods of time
+__________________________________________________________________
+
+IntelliJ
+
+	Project name: b34-java-live
+
+	By default all projects are made in a folder called IdeaProjects
+		this folder is under your user
+
+	------------------------------------------------------------------------
+	- Creating an Intellij Project
+		Open Intellij
+		Click create a New Project
+		Enter the Project Name
+		Check the location for IdeaProjects
+		Make sure Java is selected
+		Build System: IntelliJ
+		Make sure your JDK version is selected
+		Click create
+	------------------------------------------------------------------------
+
+	IntelliJ project components
+
+		project name: Project folder
+		src: source folder
+		package: folder
+		class: java file
+		console: window that shows your outputs
+		out: folder that has the bytecode
+
+		How to run the program: click the green arrow next to main method, right click -> run
+
+	------------------------------------------------------------------------
+
+	Settings to change
+
+		settings:
+			windows:
+				file -> settings
+			mac:
+				IntelliJ IDEA -> preference/settings
+		Font:
+			preference window -> Editor -> Font
+
+		Zoom in and out
+			In settings/preferences
+			Editor -> General
+			Mouse Control: Select Change Font size with command + wheel in
+
+		Add soft wrap to files
+			In settings/preferences
+			Editor -> General
+			Soft wraps: add this -> *.java;
+
+				*.md; *.txt; *.rst; *.adoc; *.java
+
+		Set Compiler in IntelliJ:
+			Java Compiler -> set the "Byte Code Version" to 17
+
+	rainbow brackets: this plugin will help you better see brackets in the code
+		settings -> plugins -> rainbow brackets
+
+__________________________________________________________________
+
+java file
+
+	Class: HelloWorld
+		no space
+
+	Java is not space sensitive  (in the code)
+	Java is case sensitive (lowercase and uppercase matter)
+	A java file will have a class. The class by itself does not run.
+
+	Syntax: grammatical rules for the language
+__________________________________________________________________
+
+main method
+
+	public static void main (String [] args) {}
+
+	-> main method: allows you to run code
+	-> where do you make main method: in every class that you want to run
+
+	The code inside main method will run line by line, top to bottom, left to right.
+
+__________________________________________________________________
+
+print statements
+
+	System.out.println();
+	-> lets you output something to console
+
+	Difference between print and println
+		System.out.println() -> output to the console and the break the line
+		System.out.print()	 -> output to the console in the same line. It DOESN't break the line
+__________________________________________________________________
+
+comments
+
+	Comments are text in a program file that will not be executed. The compiler ignores these lines
+
+	commenting is a good practice to describe how the code works.
+
+	They serve as documentation and help others understand how the code works
+
+	- Comment types
+
+		Single line comment: in a single line with two forward slashes
+			// this is a single line comment
+
+		Multi line comment: can be used to group many lines as a comment with opening /* and closing */
+
+			/*
+				comment line 1
+				comment line 2
+				comment line 3
+			*/
+
+		Java doc comment: similar to multi line comments, but provides more features for HTML documentation. Starts with /** and closes with */
+
+			/**
+			*	comment line 1
+			*	comment line 2
+			*	comment line 3
+			*/
+
+		TODO:
+			// TODO: study more comment
+
+			The TODO text is detected in a comment and IntelliJ can detect the TODO items.
+
+			Look at the bottom left for the todo tab or
+			view -> tool windows -> todo
+__________________________________________________________________
+
+escape sequence
+
+	Q: How can you output this:
+			I like "java" programming
+
+			System.out.println("I like "java" programming"); <-- ERROR
+
+	We can use the backslash to define a character we want to output
+		-> this is useful when the character we want to output is also part of java syntax
+
+		\
+
+		for example: if we want to output a " quotation mark we can do:
+			\"
+
+			"java" -> \"java\"
+			System.out.println("I like \"java\" programming");
+
+		for example: if we want to output a \ backslash we can do:
+			\\
+
+            The first backslash is for the syntax of escape characters
+            The second backslash is for the backslash character to be output
+
+		some more useful escape characters:
+
+			code 	-> output
+			\" 		-> "
+			\\ 		-> \
+			\'		-> '
+			\n 		-> next line
+			\t 		-> tab
+
+__________________________________________________________________
+
+variables
+
+	container to hold data/information
+	allows us to use that information multiple times
+		re-usability
+
+	- Declare a variable: makes a container/variable ready to be used
+
+		dataType variablName;
+		int age;
+
+	- Assign a value to a variable: store some value/number into your container
+
+		variableName = value;
+		age = 10;
+
+			 = equals sign is the assignment operator
+
+	- Declaring and assigning at the same time
+
+		dataType variableName = value;
+		int age = 10;
+
+	- multiple variables declaration in 1 statement:
+
+			int apples, grapes, bananas, mangoes;
+			apples = 10;
+			grapes = 3;
+			bananas = 23;
+			mangoes = 55;
+
+	- Using/Printing variables
+		To use a variable's value we use just the variable name
+
+			ex: int students = 200;
+				System.out.println(students); // this will print 200
+				System.out.println("students"); // this will print student as text
+				System.out.println(STUDENTS); // this will give an error because
+				// STUDENTS variable does not exist
+
+	-  reassigning
+		changing the value something else, old value is lost. Updating the variable
+
+	- Hardcoded: directly in the code, so it is difficult to change
+
+__________________________________________________________________
+
+datatypes
+
+	Primitive datatypes: byte, short, int, long, float, double, boolean, char
+
+	Object types: (we will spend more time on this later)
+		-> String
+
+	-> all primitives are lowercase
+
+		whole numbers: (ex: 40)
+			byte
+			short
+			int   <- by default
+			long
+		floating numbers: (ex: 24.62)
+			float
+			double  <- by default
+		characters: a single character, uses ''
+			char
+		boolean: true or false
+			boolean
+
+	-> compiler uses int and double by default
+
+	How to tell the compiler you want long number: use an 'L' at the end of the number
+	How to tell the compiler you want float number: use an 'F' at the end of the number
+
+	------------------------------------------------------------
+
+    char : holds a single character
+    	-> each character is represented in a single quote 'a'
+
+        char ch = 'B';
+        char lastLetterOfMyName = 'z';
+        char last = 100;
+
+		Q: how does the computer know we want a certain character
+			There is character sets that associate characters to a number
+
+			ASCII (American Standard Code for Information Interchange)
+      			is one character set that is used for english
+      			it is part of the unicode character set which handles many languages and characters
+
+	------------------------------------------------------------
+
+	String: sequence of characters in double quotations
+		object type
+
+    	Q: What is the difference between 'a' and "a"
+
+			the types are different. The 'a' is a char type and the "a" is a String type
+
+			object types take more memory
+
+__________________________________________________________________
+
+naming conventions
+
+	convention: what everyone follows
+
+	Example: today is sunday
+
+	project/folder: today-is-sunday
+
+	package: lowercase, use underscore for multiple words (snake case)
+
+		ex: today_is_sunday
+
+	classes: first letter is uppercase and the rest lowercase, for each word
+		Pascal Case: Every word starts with an uppercase
+
+		ex: TodayIsSunday
+
+	variables: camel case
+		-> first word is lowercase, then any following words start with an uppercase
+
+		ex: todayIsSunday
+
+variable naming rules
+
+	- make the variable names are clear as possible
+		dont do:
+			int x;
+			int a;
+
+	- We cannot use reserved keywords, which are already used by Java as a programming language.
+	public, static, package, void, for, if, etc.
+
+	https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
+
+	- Variables can contains these:
+		- any letter (A-Z, or a-z)
+		- any number (0-9)
+				Cannot start with numbers, but it can contain numbers.
+					Ex:
+						1stWord -> INVALID
+						word2 -> VALID
+
+		- only special characters allowed are dollar sign $ and underscore _
+				but it is not encouraged.
+
+				int _$ = 55;
+				_1Number
+__________________________________________________________________
+
+	Q: Can you write whole numbers starting with 0?
+		no, it becomes a different number
+
+	Q: What about var?
+		it is added more recently, so not always used. It can be limiting for other topics, so use the above datatypes
+
+	Q: is this a valid variable
+		int Public = 40;
+			yes in terms of syntax it is correct because the lowercase p, public is a keyword
+__________________________________________________________________
+
+Concatenation
+
+	concatenation operator +
+
+		concatenation: combining text with any data, returns String
+		concatenation turns everything to a String
+__________________________________________________________________
+
+
+
+
