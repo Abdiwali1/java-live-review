@@ -234,6 +234,8 @@ variables
 	allows us to use that information multiple times
 		re-usability
 
+		DRY: Don't repeat yourself
+
 	- Declare a variable: makes a container/variable ready to be used
 
 		dataType variablName;
@@ -267,6 +269,8 @@ variables
 				System.out.println("students"); // this will print student as text
 				System.out.println(STUDENTS); // this will give an error because
 				// STUDENTS variable does not exist
+
+				String students = "100";
 
 	-  reassigning
 		changing the value something else, old value is lost. Updating the variable
