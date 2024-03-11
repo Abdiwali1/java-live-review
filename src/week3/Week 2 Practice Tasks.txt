@@ -1,0 +1,102 @@
+
+Practice Tasks:
+
+	------------------------------------------------------------------------
+
+Overtime [if else, operators, variables]
+
+	Declare and assign the following variables
+		hourly rate & number of hours worked
+
+	Calculate your total net pay for the week. Also consider if any overtime should be paid. Overtime will be 1.5 times the normal rate and should be paid for every hour over 40.
+	(if you worked 43 hours total, you will get 40 hours normal pay and 3 hours overtime pay)
+
+	Output different messages based on overtime
+		if normal hours were worked (40 hours or less):
+			You worked $hours hours, so your total net pay is: $netPay
+
+		if you worked overtime (more than 40 hours):
+			Wow you worked $hours hours, so you will get $overtime_hours of overtime. Your net pay is $netPay
+
+	------------------------------------------------------------------------
+
+HouseMarket [switch, variables]
+
+You are buying a new house and need to collect information about the houses in a specific neighborhood
+
+	create a program that will declare and define the neighborhood name and based on the name return a report of the houses in that area. The report should include this information: the average house price, rating of school districts near by(out of 5), if it is a gated community or not, and if pets are allowed
+
+	print the final report in this format:
+		$the houses in the $neighborhood_name on average value at $average_price. This neighborhood $is_gated_or_not and the rating of the school distracts nearby is $school_rating out of 5. For the pet owners you $are_or_not in luck because pets are $allowed_or_not_allowed
+
+		Note: for simple use you can print true or false in the gated and pets parts, but for a challenge try to print the message with as many dynamic parts as possible
+
+	sample data to use:
+
+		name - Hills
+		average price - 89,000
+		rating - 4.0
+		gated - no
+		allow pets - yes
+
+		name - Oaks
+		average price - 75,000
+		rating - 3.5
+		gated - no
+		allow pets - yes
+
+		name - Highland
+		average price - 150,000
+		rating - 4.5
+		gated - yes
+		allow pets - no
+
+		name - Canyon
+		average price - 201,000
+		rating - 4.8
+		gated - yes
+		allow pets - yes
+
+    ------------------------------------------------------------------------
+
+Pandemic Checker [nested if, multibranch, operators]
+
+    Create a program that will define a year. Determine if there was a pandemic in that year. Before checking for pandemics also verify the given year is a valid year value.
+        a valid year is a year in the range of: 0 > year < 2024
+            -> if the given year is not valid do not check anything else and print:
+                    sorry $given_year is not a valid year
+
+        if a valid year is given check the ranges and output the pandemic if there was any
+
+    Use this data for years that had a pandemic:
+        1346-1353: The Black Death
+        1665-1666: Great Plague of London
+        1770-1772: Russian plague
+        1889-1890: Flu pandemic
+        1916: American polio epidemic
+        1918-1920: Spanish Flu
+        2009-2010: H1N1 Swine Flu pandemic
+        2014-2016: West African Ebola epidemic
+        2020-2021: COVID-19
+        Any year not in those ranges: No Pandemic in $given_year
+
+    ------------------------------------------------------------------------
+
+Periodic Table Elements [nested if, boolean]
+
+    The periodic table defines the elements. Define a number that you want to check and then create a program that will consider that number to be the atomic number of an element. Based on the information below print which group the element belongs to
+
+    check if the atomic number is valid. It should between: 1 - 118
+    if the number is valid check for the group otherwise print: $number is invalid. Atomic numbers must be between 1 - 118
+
+    data for atomic numbers and groups:
+        groups  | atomic numbers
+
+        alkali metals | 3, 11, 19, 37, 55, 87
+        alkaline earth metals | 4, 12, 20, 38, 56, 88
+        transition metals | 21 - 30, 39 - 48, 57, 72 - 80, 104 - 112
+        noble gas | 2, 10, 18, 36, 54, 86, 118
+
+    if any other number is given print: Sorry group for $number is not in the system yet
+
+    ------------------------------------------------------------------------
