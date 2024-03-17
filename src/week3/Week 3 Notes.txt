@@ -40,6 +40,9 @@ Shorthand Operators:
         *=
         /=
         %=
+
+        int num = 4;
+        num = num + 2; or with shorthand: num += 2
 ____________________________________________________________
 
 Unary Operators
@@ -149,6 +152,8 @@ single if vs if else vs multi branch
 
 	multi branch: checks multiple conditions and define different blocks of code to run whenever one of the conditions is true
 
+nested if: if inside of another if
+	evaulate each one - one a time
 __________________________________________________________________
 
 switch
