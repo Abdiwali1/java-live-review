@@ -1,0 +1,220 @@
+3/17/2024
+__________________________________________________________________
+
+Live Labs will be starting next week. These are optional, for extra practice and review. The material/tasks will be same in both sessions. They will be recorded and uploaded to the LMS
+	when: Wednesdays
+		session 1: 11am-1pm EST
+		session 2: 7pm-9pm EST
+
+I will share tasks for these sessions along with the weekly schedule
+__________________________________________________________________
+
+Week 3
+Java Day03 - Operators
+Java Day04 - Selection statements
+
+Operators: arithmetic, unary, shorthand, relational, logical
+If statements: single if, if else, multi branch, nested
+switch: regular, enhanced
+ternary
+__________________________________________________________________
+
+Arithmetic Operators
+
+	+ addition
+	- subtraction
+	* multiplication
+	/ division
+	% remainder/modulus
+
+	- When you use arithmetic operators between two different datatypes the result will be the bigger type.
+
+	- When you use datatypes short or byte and use some arithmetic operators the values are changed to int, so the result of the operation is also int
+____________________________________________________________
+
+Shorthand Operators:
+   	shortened versions of the arithmetic operators
+
+        +=
+        -=
+        *=
+        /=
+        %=
+____________________________________________________________
+
+Unary Operators
+
+        +	(plus) positive number
+        - 	(minus) negative number
+        ++	incrementing, adding 1
+        -- 	decrementing, subtracting 1
+__________________________________________________________________
+
+Relational Operators
+	statements return a boolean value
+
+        > greater than
+        < less than
+        >= greater than or equal to
+        <= less than or equal to
+        == equals
+        != not equals
+__________________________________________________________________
+
+Logical Operators
+        evaluates two boolean expressions and returns one resulting boolean value
+
+        and: &&
+			both expressions need to be true for the result to be true
+
+        or: ||
+			at least one expression needs to be true for the result to be true
+
+        not: !
+			opposite boolean value
+
+		bitwise exclusive or: ^
+			only one of the expressions can be true for the result to be true
+__________________________________________________________________
+
+Operator precedence
+	Execution is from top to bottom and left to right
+
+        ! - (negative) ++ --
+        * / %
+        + -
+        < > <= >=
+        == !=
+        &&
+        ||
+        = += -= *= /= %=
+
+	Use parenthesis to prioritize the operations
+		(5 + 2) * 3 -> 21
+
+	This is good to know, but are not going to be doing many calculations	
+
+__________________________________________________________________
+
+Selection statements
+    code that allows you to control how your program runs
+
+single if statements
+
+	if (boolean expression) {
+		//code to run if condition is TRUE
+	}
+
+        when the boolean expression is true -> the statements inside of the if block will be executed
+
+        when the boolean expression if false -> nothing will happen, the code will resume execution after the if statement	when we write if statement, else is block is not mandatory.
+
+if else statements
+
+	if(boolean expression) {
+	    //code to run if condition is TRUE
+	} else {
+	    //code to run if condition is FALSE
+	}
+
+        when the boolean expression is true -> the statements inside of the if block will be executed
+
+        when the boolean expression is false -> the statements inside of the else block will be executed
+
+multi branch
+	whenever there is multiple conditions that are related we can use the multi branch if to handle them
+
+	execution for multi branch: the first condition is checked, if it true the first block is executed, otherwise(false) it will check the next condition.
+
+		if(boolean 1){
+			// statements that get executed when the boolean 1 is TRUE
+		} else if(boolean 2) {
+			// statements that get executed when the boolean 2 is TRUE
+		} else if(boolean 3){
+			// statements that get executed when the boolean 3 is TRUE
+		} else {
+			// statements that get executed when all the other boolean conditions were FALSE
+		}
+
+	Note: you can declare as many else if blocks as needed
+	Note: you can add an else block at the end, it is optional
+	Note: once a condition is true and its code block is executed the other conditions are NOT checked
+	Note: multi branch statements are used to make the code more efficient and more readable
+
+single if vs if else vs multi branch
+
+	single if: checks one condition and if its true run some code
+
+	if else: checks one condition and if is true runs some code, but also has some code to run if its false
+
+	multi branch: checks multiple conditions and define different blocks of code to run whenever one of the conditions is true
+
+__________________________________________________________________
+
+switch
+
+	switch statements compares only exact values ( == )
+		relational operations logic cannot work
+
+	switch(input value){
+		case x:
+			// statements
+			break;
+	}
+
+		switch: keyword that is used to create switch statements
+
+		input value: value that is checked in the switch
+			can only be: byte, short, int, String, char
+			what is not allowed: boolean, float, double, long
+
+		case: value that you are looking for
+			case should match the same datatype as the input value
+			cases should be unique
+
+		statements: any code that should run when a case matches
+
+		break: stops and exits the switch statement
+
+		default: the case that gets executed if no other case matches
+
+Benefit: more readable, compact, easy to maintain, in general can be quicker in execution than if statement
+
+Flow of execution
+
+	if: check one boolean at a time, if it true run the that block, but if its false check the next condition
+
+	switch: matches the case right away then runs the statements defined from that point until the end of the switch statement
+		Note: we use break to also stop the switch
+
+enhanced switch
+	different syntax to create a switch that can return a value
+
+	var output = switch(input value){
+		case x -> result
+	}
+
+__________________________________________________________________
+
+ternary
+	different way to write an if statement
+
+	returnValue = boolean_expression ? trueValue : falseValue;
+
+		? if
+		: else
+__________________________________________________________________
+
+If statement vs Switch vs Ternary
+
+	in most cases you will use if statements
+	any switch or ternary can always be converted to an if statement
+	If statements allow more flexibility by using single if, if else, multi branch, or nested
+
+	Switch is useful to compare the exact value, so it is a good choice when all the possible values are known (they will be the cases)
+	Downsides: only compare values, no boolean logic, and the datatypes that can be compared are a little restrictive
+
+	Ternary useful sometimes to make a quick single if statement in one line
+	Can only be used when a value is returned, and you need to at least define two possible outputs
+
+__________________________________________________________________
