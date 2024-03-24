@@ -1,0 +1,126 @@
+3/24/2024
+
+Week 4
+Java Day05 - Loops
+Java Day06 - Methods
+__________________________________________________________________
+
+loops: for loop, while loop, do while loop, nested loop
+branching statements
+
+methods: return types, parameters/arguments, method overloading
+__________________________________________________________________
+
+loops
+
+    Loops are used to repeat statements
+        You can define some action/code that you want to execute repeatedly
+
+    iteration: each cycle of the code, each time the statements execute
+
+    infinite loop: a loop that continues to execute without stopping. A loop will be infinite if the boolean expression is always true and never changes to false
+
+	- for loop: loop that is used when there is a fixed number of iterations
+
+        for(initialization; boolean expression; update){
+            // statements
+        }
+
+        flow:
+        	1) initialization
+        	2) boolean is checked: true = loop runs, false = loop stops
+        	3) statements are run
+        	4) update
+        	one iteration finished, now it repeats from steps 2-4
+
+	- while loop: loop that is used when the the number of iterations is not known and based on a boolean expression
+
+        while(boolean_expression){
+            // statements
+        }
+
+        flow:
+           	1) boolean is checked: true = loop runs, false = loop stops
+           	2) statements are run
+           	one iteration finished, now it repeats from step 1
+
+
+	- do while loop: similar to the while loop but the first iteration/execution is always run at least one time and then the boolean value is checked
+
+	    do{
+	        // statements
+	    } while(boolean_expression);
+
+        flow:
+        	1) statements are run
+            2) boolean is checked: true = loop runs, false = loop stops
+
+nested loop: loop inside a loop
+
+		- the nested loop can be any loop type, but we commonly use for loop
+			for(int i = 0; i < 5; i++){
+				for(int j=0; j < 2; j++){
+					System.out.println(i + " " + j);
+				}
+			}
+
+			The outer loop ( first loop using the i variable ) will execute for a total of 5 iterations
+
+			The inner loop ( second loop using the j variable ) will execute for a total of 10.
+				-> for each iteration of the outer loop the inner loop starts from the beginning and executes until the end
+
+__________________________________________________________________
+
+branching statements
+
+    break statement in loop:
+        stops and exits the loop
+
+    continue statement in loop:
+        it will skip the rest of the iteration and goes to the update part
+        any code after continue will not run for that iteration
+
+	return: stops the method
+__________________________________________________________________
+
+methods
+
+	methods are important for programming. They help you create reusable code
+
+return type
+
+	void: runs some code and nothing is returned from the method
+	return type: runs some code and returns a single value back
+
+	if a method defines a return type instead of void, then there MUST be a return value.
+		-> The return value is given using the 'return' keyword
+
+	when calling a return method it is up to you how you will use the return value
+
+parameters/arguments
+
+    parameters are information needed for a method to run. That information is used in the method
+        you can define as many parameters as needed
+
+    Q: What is the difference between parameter and argument
+            parameter: the variables declared and used in the method
+
+            argument: the value given when calling a method
+
+method overloading
+
+	method has the same name, but different parameters (parameter datatypes can be changed or the number of parameters)
+
+		-> allow us to have different methods that share a similar idea and work with different inputs
+			+ readability
+			+ re-usability
+
+    return type DOES NOT overload your method
+        you need to overload the method by changing the parameters
+            -> BUT IF the method is overloaded THEN you can change the return type
+                -> Return type can be the same or different if overloaded
+
+	IQ: Can you overload a main method?
+		Yes, we can add a new method with name main, and have different parameters, but it will not act as the normal main method
+
+__________________________________________________________________
