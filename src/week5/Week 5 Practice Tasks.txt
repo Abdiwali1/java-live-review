@@ -1,0 +1,88 @@
+Practice Tasks
+
+	------------------------------------------------------------------------
+
+Recipe [object type]
+
+    Create a class called Recipe
+    declare these instance variables:
+        name, ingredients, serving size, cost
+
+    create a method called costPerPerson that will return a double. Calculate the amount each person would need to pay to make this recipe - use the serving size and cost values
+
+    create a toString() that shows the information in the following format:
+        Recipe for $name will require these ingredients:
+                $all_ingredients
+        This dish will serve $serving_size and cost a total of $ $cost to make
+
+    create a different class and create some Recipe objects
+
+
+	------------------------------------------------------------------------
+
+Shopping List [do while, String, Scanner]
+
+	create a program that create a shopping list for the user. The program will ask the user to enter the items one by one.
+
+	the flow:
+		ask the user for the item
+		add item to the shopping list
+		ask user if they want to add more items
+
+	when the user is done creating the list print it
+
+	------------------------------------------------------------------------
+
+MiddleCharacters [indexes, cases, length]
+
+	Create a program that will ask the user to enter a word. Return the word in lowercase expect for the middle character/s in uppercase
+
+	Note: based on if the word is even or odd there will be either two middle characters(even length) or one middle character (odd length)
+
+	Ex:
+		input:
+			apple
+		output:
+			apPle
+
+		input:
+			JavA
+		output:
+			jAVa
+
+	------------------------------------------------------------------------
+
+SmsParts [substring, indexOf]
+
+	Create a program that will has a message String in this exact format:
+
+		Sender: <NAME>. From number: [NUMBER]. Message: {MESSAGE}
+
+	The content of name, number and message can vary, so based on the format extract those parts and output them.
+
+	Ex:
+	Sender: <Omer Karahan>. From Number: [202-123-3456]. Message: {I love programming and problem solving}
+
+	Output:
+		Sender: Omer Karahan
+		Number: 202-123-3456
+		Message: I love programming and problem solving
+
+	------------------------------------------------------------------------
+
+Count Hi [method, loop, String]
+
+	create a method that will accept a String and count how many times the word "hi" is found in the String. return the count
+
+		ex:
+			input: aahiahiaaahh
+			output: 2
+				"hi" was found 2 times
+
+			input: ahhhbchidefhihellohiiiiworld
+			output: 3
+				"hi" was found 3 times
+
+	extra: overload the method to search for any word, not just "hi"
+
+	------------------------------------------------------------------------
