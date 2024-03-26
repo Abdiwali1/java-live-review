@@ -87,6 +87,16 @@ methods
 
 	methods are important for programming. They help you create reusable code
 
+	public static String hello(int n){
+		return "world";	
+	}
+
+	public static void main(String[] args){
+		String str = hello(4);
+		System.out.println(hello(4));
+	}
+
+
 return type
 
 	void: runs some code and nothing is returned from the method
