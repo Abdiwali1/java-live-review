@@ -2,7 +2,7 @@
 
 Week 5
 Java Day07 - Class & Object Part1
-Java Day08 - String Class
+Java Day08 - String Classs
 Git Day01 - Git, GitHub, Commit, Push, Pull
 __________________________________________________________________
 
@@ -156,7 +156,7 @@ __________________________________________________________________
 
 Local Flow (Upstream: local -> remote)
 
-	New project --> java project -> B30GitReview --> finish
+	New project --> java project -> B34GitReview --> finish
 
 	VCS -> Enable Version Control Integration
 		(creating the local repository)
