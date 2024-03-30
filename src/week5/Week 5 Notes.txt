@@ -1,0 +1,235 @@
+3/30/2024
+
+Week 5
+Java Day07 - Class & Object Part1
+Java Day08 - String Class
+Git Day01 - Git, GitHub, Commit, Push, Pull
+__________________________________________________________________
+
+Class & Object Part1:
+	class, object, instance variables & methods, toString, local vs instance, GC, null, Scanner
+
+String Class
+	String methods, StringBuilder, StringBuffer
+__________________________________________________________________
+
+class & object
+
+	What is a class?
+	    a template/blueprint for objects
+	    classes are made in java files
+	    the public classes should match the java file name
+
+	What is an object?
+	    instances of the class, so it has access to the instance variables/methods
+
+	How to create an object?
+	    ClassName referenceName = new ClassName();
+
+	    instantiation: creating an object
+	        in-stan-shi-a-tion
+
+	What is an instance variable?
+	    variables defined in a class. There variables belong to each object of the class
+	    Every object has its own copy of instance variables
+
+	Q: What is the difference between instance variables and local variables
+			instance variables are defined in a class and accessed from the object of that class
+			local variables are defined in a block of code and only accessible in that block
+
+toString
+	this method is called automatically when you print an object
+
+	if you generate: DONT WORRY ABOUT @OVERRIDE RIGHT NOW - we will learn more about this later
+__________________________________________________________________
+
+Memory
+
+	JVM will allocate memory automatically when a program is run
+
+	stack: holds method frames, local variables, references
+
+	heap: holds objects, String pool
+
+	null: no object, a placeholder when there is no value
+
+	GC: garbage collection is used to clean up the memory. When run it removes any object that are not referenced
+
+__________________________________________________________________
+
+package & import
+
+	imports allow us to use class/files that are in different packages
+
+	order of a java file:
+		-> imports go between the package and class
+			PIC: package, import, class
+
+	the java.lang package is automatically imported
+		String, System
+
+	import packageName.className
+
+	import packageName.*; // allows you to use all of the class in that package
+		* -> wildcard -> all classes
+__________________________________________________________________
+
+Scanner
+
+	Scanner is a class that has methods that allow us to read information from the console
+
+	why to use Scanner
+		to avoid hard coding
+			hard coding: the value is fixed in the code
+
+	how to use Scanner:
+
+		1) import the class
+			Scanner is a class in the java.util package so we can import it from there to use it
+				import java.util.Scanner;
+
+		2) 	creating the Scanner object(variable)
+			In order to use the methods from the Scanner class we need to make an object
+				Scanner input = new Scanner(System.in);
+
+		3) call the methods
+			we can use Scanner methods with the object we made (step 2)
+				general syntax: nameOfScanner.method()
+
+	next(): reads a single word
+	nextLine(): reads multiple words
+		accepts the enter input
+		note: causes a problem when used after the other Scanner methods
+
+__________________________________________________________________
+
+String
+
+	String is a class that represent sequence of characters
+
+	String is defined in the java.lang package
+
+	2 ways to create String object
+
+		* literal: creating with double quotations
+			""
+				stored in the String pool
+
+		* new: new String("");
+
+	Strings are immutable
+		the object cannot be changed after creation
+
+	Strings have indexes:
+		position of each character in the String
+		index numbers start from 0
+
+documentation: define how to use the class, methods
+
+	https://docs.oracle.com/en%2Fjava%2Fjavase%2F11%2Fdocs%2Fapi%2F%2F/java.base/java/lang/String.html
+
+StringBuilder: mutable String
+StringBuffer: legacy version of mutable String. synchronized
+
+================================================================================================
+
+Git & GitHub
+
+	git: version control system
+
+	GitHub: online platform that hosts our remote repositories
+
+	local repository: folder on your computer that keeps track of the changes
+	 (hidden .git folder)
+
+	remote repository: folder online that keeps track of the changes, this is where others can also share their changes
+		-> we are using GitHub to host these repositories [GitHub.com](http://github.com)
+
+	un-versioned file: not being kept track of
+
+	clone: create a copy of a remote repository to your local computer
+		go to the remote repository on github
+		click the green code button and copy the given https link
+		in intelliJ go to file -> new -> project from version control
+		paste the url
+__________________________________________________________________
+
+Local Flow (Upstream: local -> remote)
+
+	New project --> java project -> B30GitReview --> finish
+
+	VCS -> Enable Version Control Integration
+		(creating the local repository)
+
+	Create git ignore
+
+	- .gitignore: has the ability to ignore, or not track changes of, certain files or folders
+
+		Note: You can not un-track a file already been tracked using .gitignore file. That's why the .gitignore file is usually created in the beginning of the project. If you need to untrack a file and ignore it you will need to run a command (we will talk about the commands later)
+
+			files that are often ignored in a java project:
+				.idea
+				out
+				*.iml
+
+		Option 1) right click on project -> new -> file -> .gitignore
+
+		Option 2) you select the file/s you want to add to git ignore -> right click on the files -> git -> add to gitignore
+
+	Add some files or make changes
+
+	- commit: saving your changes to the local repository
+		changes in files
+		commit message (what changes were made)
+		the author (who made the commit)
+
+	Q: Where are the changes? Are they on the remote yet?
+
+__________________________________________________________________
+
+Connect to remote
+
+Sharing the project
+
+	Sharing by going to git -> github -> share on github
+
+		- creates a remote repository on github
+		- link our project with the remote repository
+		- push the changes so far
+
+	or manually:
+
+		- go to github.com -> repositories
+		- create a new repository
+		- take the link from github, then go to intelliJ, go to git -> manage remotes -> click the plus icon -> add the url
+		- push the commits
+
+	- push: sending the commits(changes) from our local repository to our remote repository
+
+practice flow of commit & push (local -> remote)
+		create a new package if needed (not tracked)
+		create a new file
+		commit that file
+		create another new file
+		commit that file
+		push all changes to the remote
+__________________________________________________________________
+
+Downstream Flow (remote -> local)
+
+	our local projects need to always be updated to be the same as the remote, so we should always get new changes to our projects before trying to share any of our own changes
+
+	fetch: will bring the commit data without merging the changes into the project
+
+	update: gets the new changes for that branch
+
+	pull: more functionality to control which branch you pull from and to
+		does the fetching and merge at the same time
+
+practice flow of updating the project (remote -> local )
+		go to the project on github
+		manually add a file on github - to simulate someone else making the change, we can do proper team collaboration in next classes
+		commit that file on the bottom of the page
+
+		locally test fetching, to see the information, and then update our project to get the changes
+__________________________________________________________________
