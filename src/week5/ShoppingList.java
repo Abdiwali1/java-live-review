@@ -19,8 +19,10 @@ public class ShoppingList {
 
             shoppingList += "*\t" + item + "\n"; // shoppingList += input.nextLine();
 
-            System.out.println("Do you want to add more items? yes or no");
-            yesOrNo = input.nextLine();
+            do {// this loop will run when yesOrNo value is NOT yes or no
+                System.out.println("Do you want to add more items? yes or no");
+                yesOrNo = input.nextLine();
+            }while (!(yesOrNo.equals("yes") || yesOrNo.equals("no")));
 
         } while (yesOrNo.equals("yes"));
 
