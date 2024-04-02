@@ -34,7 +34,7 @@ LanguageCharacters [array, char, loop, method]
 
     Arabic: 1548 - 1790
 
-    Chinese, Japanese, Korean or Vietnamese:  63744 - 64045
+    Chinese, Japanese, Korean: 63744 - 64045
         (this group of characters are the: CJK Compatibility Ideographs)
 
     Braille: 10240 - 10495
