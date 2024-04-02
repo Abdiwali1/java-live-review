@@ -1,0 +1,108 @@
+Practice Tasks
+
+	------------------------------------------------------------------------
+
+Countries [array, String, loops]
+
+    Create a program that defines an array of countries. Use the countries defined below or create your own array that has different country names. Use the countries to display different information defined in the mini tasks
+
+        String[] countries = {
+                "Brazil", "China", "Cuba", "Sweden", "France", "Vietnam",
+                "Albania", "Portugal", "Philippines", "Armenia",  "Colombia",
+                "Honduras", "Indonesia", "United States"
+                };
+
+	- Find and print all the first and last characters
+
+	- Find the largest and smaller countries based on the length of their names
+
+    - Show all the countries that start with a 'C'
+
+    - Show all the countries that end with an 's'
+
+	------------------------------------------------------------------------
+
+LanguageCharacters [array, char, loop, method]
+
+    Create a method that will accept a String for the language name. Based on the given language name return a char array of the characters that are used in that language. We will use ascii numbers
+
+    Use the following ranges:
+
+    English: 33 - 126
+
+    Greek: 884 - 1011
+
+    Arabic: 1548 - 1790
+
+    Chinese, Japanese, Korean or Vietnamese:  63744 - 64045
+        (this group of characters are the: CJK Compatibility Ideographs)
+
+    Braille: 10240 - 10495
+
+    ------------------------------------------------------------------------
+
+AverageEach [multidimensional, loop]
+
+    Create a program that will define a 2D int array with some numbers. Go through and calculate the average of each inner array and the average of the whole 2D array
+
+    Ex:
+       int [][] nums = {
+                {3, 4, 5, 6},
+                {5, 2, 6},
+                {10, 40, 20}
+        };
+
+        output:
+            average of: [3, 4, 5, 6] is 4.5
+            average of: [5, 2, 6] is 4.3
+            average of: [10, 40, 25] is 25.0
+            average of all is 10.6
+
+    ------------------------------------------------------------------------
+
+GoogleSearch [Wrapper class, String, testing/automation idea]
+
+    Create a program that will define a String that is given in a fixed format based on how google search results are displayed.
+
+    format: About 3,940,000,000 results (0.39 seconds)
+
+    Scenario: check if your search results are under 100 Million
+        if the results are under print: Good Search
+        if the results are over print: Narrow your search, too many results
+
+    AC: User should be able to search in google and get results back in under 0.85 seconds or less
+    Test Case:
+        Given user opens the browser and navigates to google.com
+        Then searches for {data}
+        Verify if the time is less than or equal to 0.85 seconds
+
+            > check the number of seconds it took for the results to see if the functionality is working properly
+
+    ------------------------------------------------------------------------
+
+WeatherReport [ArrayList, loop, operators]
+
+    Create a program that will define an ArrayList of recent temperatures. There is always extreme temperatures so to get a better reading of the data remove the highest 2 and lowest 2 temperatures. Then give the following information based on the temperature:
+
+        max temperature, min temperature, median (middle temperature), mean (average temperature)
+
+        also, give a prediction temperature range for the next few days by using the average and both adding and subtracting 5 to create the range. The values for this predication can be whole numbers
+
+        we can assume the amount of data will always be an odd number so there will be one median
+
+    Ex:
+        input:
+            62.1, 68.9, 55.4, 44.8, 77.3, 43.0, 53.4, 47.1, 55.8, 42.3, 48.5
+
+            // excluded:  42.3, 43.0, 68.9, 77.3
+            // data sample: 44.8, 47.1, 48.5, 53.4, 55.4, 55.8, 62.1
+
+        output:
+            max: 62.1
+            min: 44.8
+            median: 53.4
+            mean: 52.44
+            predication: 47 - 57
+
+
+    ------------------------------------------------------------------------
