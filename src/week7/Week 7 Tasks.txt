@@ -1,0 +1,119 @@
+
+Week 7 Tasks
+We will practice these together on Sunday 14th
+
+----------------------------------------------------------------------------------------
+
+UberReceipt [String, indexes]
+
+    create a program that will extract details from a receipt emailed to you from your uber ride
+    extract the number of miles, number of minutes, and total cost
+
+    here is an example receipt:
+
+        String receipt = "Uber Receipts 2 days ago\n" +
+                "Thanks for using Uber. Remember to rate your driver\n" +
+                "The 5 mile trip took about 20 minutes\n" +
+                "Your total was $25.19";
+
+----------------------------------------------------------------------------------------
+
+CamelCase [loop, String, method]
+
+    create a method that will accept a String, of words separated by spaces, and return a camel case version of the String where the first letter of each word is uppercase and the rest of the word is in lowercase
+
+    Exception: The first word starts with a lowercase
+
+    Ex:
+        Input:
+            JAVA will ruLE tHe wORLd
+        Output:
+            javaWillRuleTheWorld
+
+----------------------------------------------------------------------------------------
+
+Bot [while, Scanner, conditional]
+
+	create a program that will make a simple bot that can talk with the user. when the program runs the user will be able to continue typing to the bot. Based on what the user says the bot will say something back. Use the following sample set up, but be creative and add more to the bot
+
+	user says | > bot responds
+
+	hello | > world
+	what is your age | > I was programmed in 2024
+	who created you | > I was created by Saim (use your name)
+	what can we talk about | > print a menu of the options the bot can respond to
+
+	off | > haha you cannot turn me off I am invincible
+	shutdown | > SHUTTING DOWN (program ends, user cannot type anymore)
+
+	bonus: keep track how many times you interacted with the bot
+	bonus: keep a log of the conversation
+
+----------------------------------------------------------------------------------------
+
+ArrayUtils [array, loop, method]
+
+    Create these two utility methods for array objects
+
+    indexOf(int[] arr, int element)
+        create a method that will search for and return the index of the given element in the array.
+            if there is multiple of that element return the first occurrence
+            if the element does not exist return -1
+
+        Ex:
+            indexOf({3, 4, 1, 5, 6, 5}, 5) -> 3
+            indexOf({3, 4, 1, 5, 6, 5}, 7) -> -1
+            indexOf({3, 4, 1, 5, 6, 5}, 3) -> 0
+
+    subArray(int[] arr, int start, int end)
+        create a method that will return part of the array back. The part of sub-array will be based on the start the end indexes. The end index is not included
+
+        Ex:
+          subArray({3, 4, 1, 5, 6, 5}, 0, 3) -> {3, 4, 1}
+          subArray({3, 4, 1, 5, 6, 5}, 2, 5) -> {1, 5, 6}
+          subArray({3, 4, 1, 5, 6, 5}, 1, 6) -> {4, 1, 5, 6, 5}
+
+----------------------------------------------------------------------------------------
+
+ReverseEach [array, loop, String]
+
+    Create a method that will accept a String that is a sentence. Reverse each given word, but maintain the order of the words. Return the reversed version
+
+    Ex:
+        can you join the team  ->  nac uoy nioj eht meat
+
+----------------------------------------------------------------------------------------
+
+RedactFile [ArrayList, array, loop, String]
+
+    create a method that will have two parameters. The first parameter is a String of important information. The second parameter is an ArrayList of the words that need to be redacted or hidden. Go through each word of the String and hide the words that were given. Return the text in the redacted format.
+
+    for example if text has a word "hello" and that is one of the words that should be hidden you can replace that word with "-----"
+
+ 	bonus: the redaction length should match the length of the original word
+
+    Ex:
+    	text = Hello world. we will learn java. first program is hello world
+    	hide = "hello", "java"
+
+    	output: ----- world. we will learn ----. first program is ----- world
+
+    sample data:
+        text = "Agent Shadow, a seasoned operative with a reputation for discretion, embarked on a mission to dismantle an international syndicate threatening global security. Intelligence suggested that the syndicate, code name Silhouette was orchestrating a series of cyber-attacks to gain control of sensitive government databases. Posing as a wealthy entrepreneur, Agent Shadow infiltrated a high-profile gala where Silhouette's enigmatic leader, known only as Ghost, was rumored to make an appearance. Disguised in a sleek tuxedo, Agent Shadow discreetly mingled with the elite attendees, extracting valuable information about the syndicate's next move. As the night unfolded, Agent Shadow intercepted encrypted messages hinting at a secret meeting location. Employing her skills in cryptography, she deciphered the coordinates pointing to an abandoned warehouse on the outskirts of the city. The warehouse, it seemed, served as Silhouette's operational base. Under the cover of darkness, Agent Shadow infiltrated the warehouse, discovering advanced surveillance equipment and a command center for the cyber-attacks. In a hidden chamber, she stumbled upon a dossier containing the names of compromised agents within various intelligence agencies. With the gathered evidence, Agent Shadow transmitted a secure report to headquarters, exposing Silhouette's plans and outlining a strategy for a coordinated take down. The race against time had begun, as global security hung in the balance, and Agent Shadow prepared for the final confrontation with the elusive Ghost."
+
+        hide = "Shadow", "dismantle", "syndicate", "Silhouette", "Ghost", "warehouse", "darkness", "cyber-attacks"
+
+----------------------------------------------------------------------------------------
+
+SumDigits [Wrapper class, ArrayList, loop]
+
+    Create a method that will accept an ArrayList of String. The elements in this ArrayList will be number digits like: "123". Calculate the sum of the digits and store them into a new ArrayList of Integers. Return that ArrayList with the sums
+
+        Ex:
+            Input:
+            ["123, "52", "513"]
+            Output:
+            [6, 7, 9]
+
+----------------------------------------------------------------------------------------
+
