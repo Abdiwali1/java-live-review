@@ -1,0 +1,348 @@
+4/7/2024
+
+Week 6
+
+Java Day09 - Arrays ( 3 modules: 31, 32, 33)
+Java Day10 - ArrayList (2 module: 35, 36)
+Git Day02 - Branching, Merging, Pull Requests, Cloning
+__________________________________________________________________
+
+Array: create & use array objects, for each loop, split(), toCharArray(), Arrays class
+
+ArrayList: Wrapper classes, ArrayList, Collections class, bulk operation methods (Collection type), removeIf()
+
+Utility classes
+__________________________________________________________________
+
+Array:
+
+In programming languages we have data structures that allow us to handle data easily and efficiently
+
+    Array is a data structure that holds primitive & object types
+    Arrays are objects
+
+How to create an array
+
+    1) datatype [] arrayName = { };
+
+        String [] cities = { "San Fransisco", "Moscow", "Madison", "Tokyo", "Baghdad" };
+        int [] nums = { 3, 1, 5, 4};
+
+    2) datatype [] arrayName = new datatype[size]
+
+        String [] names = new String[2];    [ null, null ]
+        int [] numbers = new int[3];    [ 0 , 0 , 0 ]
+
+        When you make an array this way the elements have default values
+            int -> 0
+            double -> 0.0
+            object -> null
+            boolean -> false
+            char -> '\u0000' (null character, Unicode 0)
+
+    3) Declare and assign
+
+        double [] prices = new double[]{10.5, 50.6, 30.9};
+
+How to read each element of the array
+
+    each element in the array has an index starting from 0
+
+    String [] cities = { "San Fransisco", "Moscow", "Madison", "Tokyo", "Baghdad" };
+                                0            1          2         3         4
+    arrayName[index]
+        cities[0] -> "San Fransisco"
+        cities[4] -> "Baghdad"
+        cities[5] -> ArraysIndexOutOfBoundsException
+
+How to change/assign an element to the array
+
+    arrayName[index] = value
+__________________________________________________________________
+
+for each loop
+
+    used to iterate through a collection/data structure
+
+    for(datatype variableName : data structure){
+
+    }
+
+    The for each loop iterates from the beginning of the array to the end, one element at a time
+
+    Advantages:
+        - clean and readable code
+        - no need to keep track of iterations
+        - iterates over every element
+
+    Disadvantages:
+        - only goes forwards
+        - no control of element via index
+        - does not allow changes in size of collection (relevant later)
+
+__________________________________________________________________
+
+Arrays class
+    located in java.util
+
+https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html
+
+    This is a class that has useful method for array objects
+
+    some of the methods:
+        Arrays.toString()
+        Arrays.equals()
+        Arrays.sort()
+        Arrays.copyOf()
+__________________________________________________________________
+
+String methods: methods in the String class
+
+	toCharArray(): converts the String to a char array
+		returns char[]
+		Ex:
+			String s = "java";
+			s.toCharArray() --> ['j', 'a', 'v', 'a']
+
+	split(): break the String into parts, where each part is a different element in a String array
+		returns String[]
+
+		common use case: separate words in a sentence
+
+			String str = "today is friday";
+			str.split(" ") --> ["today", "is", "friday"]
+__________________________________________________________________
+
+multidimensional array
+
+    An array that holds other arrays.
+    The element of a 2D is a 1D array
+
+        single array
+           int [] a = {1, 2, 3};
+
+        2D array
+           int [][] arr = {
+                    {1, 2, 3},
+                    {4, 5, 6}
+                }
+
+            arr[1] -> {4, 5, 6}
+            arr[1] = { 10, 30 10};
+
+            To access the elements we will still use indexes. In this case the elements are other arrays
+
+    Print the multidimensional arrays:
+        Arrays.deepToString(arr);
+
+declaring 2D array
+
+    dataType [][] arrayName = new dataType[x][z];
+
+        where x is how many elements the 2D array has - number of arrays
+
+        where z is the size of each inner array
+            -> is optional to define. If it is not defined then the inner array sizes' do not matter. they can be different
+
+    dataType [][] arrayName = {arrayName1, arrayName2, etc}
+
+    dataType [][] arrayName = {
+        {element, element, element, etc},
+        {element, element, element, etc},
+        {element, element, element, etc}
+    };
+
+__________________________________________________________________
+
+wrapper class
+
+    object representation of primitive datatypes
+    Wrapper classes are defined in the java.lang package
+
+    primitive -> Wrapper classes
+        byte -> Byte
+        short -> Short
+        int -> Integer
+        long -> Long
+        float -> Float
+        double -> Double
+        char -> Character
+        boolean -> Boolean
+
+Why do we need it?
+
+    1) ArrayList and other other collection types DO NOT WORK with primitive types
+        -> array objects work with both primitive and object types (non primitive)
+
+    2) Wrapper classes have useful methods & information
+        Ex: parse methods, MAX_VALUE
+
+How to make wrapper class object * no need to use the new keyword
+    className varName = value;
+
+Converting types * Both are automatic
+
+    Autoboxing: converts the primitive datatype to the wrapper class object
+
+    Unboxing: converts the wrapper class object to the primitive datatype
+
+What is the different between parse method and valueOf methods
+
+    parse methods return the primitive datatypes
+        Ex: parseInt(), parseDouble()
+
+    valueOf methods return the wrapper class objects
+        Ex: Integer.valueOf(), Double.valueOf(), String.valueOf()
+
+__________________________________________________________________
+
+ArrayList
+
+    ArrayList is a class. It is part of the collection framework (we will learn later)
+
+ArrayList vs Array
+
+    ArrayList:
+        - dynamic size
+        - allows manipulation of data with methods: adding, removing, checking for elements
+        - only object types
+
+    Array:
+        - takes less memory
+        - good for reading fixed sets of data
+        - works for both primitive and object types
+
+__________________________________________________________________
+
+Collections class
+
+    This class is a utility class for collections
+        located in the java.util package
+
+        https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collections.html
+
+        ArrayList is a collection, so we can use these methods with ArrayList
+
+    Methods
+        Collections.sort(collection type): sort the given collection
+            void method
+
+        Collections.reverse(collection type): reverse the order of the elements in given collection
+            void method
+
+        Collections.max(collection type): returns the biggest elements in the collection
+            returns element datatype (Integer, Double, etc)
+
+        Collections.min(collection type): returns the smallest elements in the collection
+            returns element datatype (Integer, Double, etc)
+
+        Collections.swap(collection type, index1, index2): swap the elements in the collection based on the defined indices. The element in index1 is put into the index2 and vice versa
+            void method
+
+        Collections.frequency(collection, element): returns the number of times the given element is found in the collection
+            returns int
+__________________________________________________________________
+
+Bulk operations
+    the arguments of these methods are collection types
+
+    we use the method: Arrays.asList to get a collection type, or we can pass an ArrayList object
+
+    addAll (collection type): adds all the elements from the parameter list to our ArrayList
+
+    removeAll(collection type): removes every occurrence of every element from our parameter list
+
+    containsAll(collection type): checks if the ArrayList contains every element from the collection type parameter. returns boolean
+
+    retainAll(collection type): keep all matching elements from the argument. The rest are removed
+
+__________________________________________________________________
+
+removeIf(): method that can remove elements based on a lambda expression
+
+    removeIf( lambda )
+
+        basic lambda for this method (based on our current understanding)
+            variable -> boolean(using the variable)
+
+            -> the given boolean statement will be evaluated with each element. If the result is true the element will be removed
+__________________________________________________________________
+
+Math class
+
+    a class that defines methods related to mathematical operations
+
+https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Math.html
+
+__________________________________________________________________
+
+================================================================================================
+
+Git & GitHub
+__________________________________________________________________
+
+Branching
+
+    Branching in git is like opening a new timeline for new changes without any impact to the original
+        + light weight & easy to create
+
+    checkout: switch the branch/ move the HEAD
+
+    HEAD: current branch you are looking at
+
+    Merge: Combine changes from branches together
+
+Practice flow with branches
+
+    right click on the master branch -> new branch from master
+    make sure you also checkout to the new branch
+    make new changes + commit
+    pushed from my local name branch to a new origin name branch
+    go to github and create a pull request to merge our origin name branch to origin master branch
+    merge the branches
+__________________________________________________________________
+
+Pull Request
+
+    What is a pull request: a step between merging branches to allow review of the changes
+
+    in real project, you cannot directly merge branches, there needs to be some kind of review process, based on company practices it might change but for example at least 2 people needs to review before merging. Pull requests can help with this process
+
+    1) go to remote repository
+        find the pull request menu
+        create a new pull request
+            master(base) <- name branch (compare)
+                compare/merge the changes in the name branch to the master branch
+
+        assign a reviewer and they will comment, discuss, and then approve changes
+
+        after pull request is approved the branches are merged
+
+    2) changes are often detected by GitHub so most of the time you will see a suggestion to make a pull request after a push
+
+__________________________________________________________________
+
+Clone: creates a local project to your computer
+
+Fork: creates a copy of the project to your account
+__________________________________________________________________
+
+Merge Conflict
+
+    Merge conflict occur when trying to merge but there is some difference between branches or repositories
+
+    What's the best way to handle conflicts?
+        Avoid them
+
+        But if a conflict occurs we need to compare the two files and resolve it. IntelliJ has a good UI window to resolve conflicts
+
+        accept yours                    result              accept theirs
+
+        // html for cart page                               // team members line
+
+        3 options to resolve the conflict
+            you accept your changes
+            you accept their changes
+            fix the conflict in the middle with mix of the code + merge
+__________________________________________________________________
+
