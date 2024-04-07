@@ -12,6 +12,10 @@ Array: create & use array objects, for each loop, split(), toCharArray(), Arrays
 ArrayList: Wrapper classes, ArrayList, Collections class, bulk operation methods (Collection type), removeIf()
 
 Utility classes
+
+CodingBat
+LeetCode
+Hackerrank
 __________________________________________________________________
 
 Array:
@@ -43,6 +47,12 @@ How to create an array
     3) Declare and assign
 
         double [] prices = new double[]{10.5, 50.6, 30.9};
+
+
+    Stack       Heap
+                
+    String s  -> "abc"
+         hdh313hd
 
 How to read each element of the array
 
@@ -212,6 +222,10 @@ ArrayList vs Array
         - good for reading fixed sets of data
         - works for both primitive and object types
 
+Arrays obj = new Arrays() -> not what you do
+Arrays.method(arr)
+int[] a = {12, 3};
+a.get() -> not what you do
 __________________________________________________________________
 
 Collections class
