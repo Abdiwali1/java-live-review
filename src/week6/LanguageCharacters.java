@@ -57,7 +57,7 @@ public class LanguageCharacters {
             // if the default I don't have any information about that language, but I must return something
         }
 
-        char[] allCharacters = new char[end - start]; // end - start is how many character total we have - size of the array
+        char[] allCharacters = new char[end - start + 1]; // end - start is how many character total we have - size of the array + 1 to include the last character
         for(int i = 0; i < allCharacters.length; i++, start++){ // i is for the index of the array
             allCharacters[i] = start; // assigning each character to the array
         }
