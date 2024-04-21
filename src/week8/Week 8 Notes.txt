@@ -32,7 +32,7 @@ constructor
 
     constructors are used to initialize instance variables and run other code that would set the object up
 
-    if no constructor is made by you a default constrictor will always be given by the compiler. It will be a no argument constructor
+    if no constructor is made by you a default constructor will always be given by the compiler. It will be a no argument constructor
 
 constructor chaining allows constructor to call another constructor
 
