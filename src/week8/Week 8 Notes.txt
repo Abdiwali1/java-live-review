@@ -1,0 +1,232 @@
+4/21/2024
+
+Week 8
+Java Day11 - Class & Objects Part2 (2 modules: 38, 39)
+Java Day12 - OOP Encapsulation (1 module: 40)
+Git Day03 - Branch Strategy, Team Collaboration
+__________________________________________________________________
+
+For the PWS sessions we will try something different for next week
+We will have the Monday session at 1 PM EST - 3 PM EST
+and we will have the Tuesday session at the planned time 6 PM EST - 8 PM EST
+
+Depending on participation and attendance we will see how these go. Each day will still be unique tasks, so if you cannot join one of the sessions you will need to watch the recording
+__________________________________________________________________
+
+Constructor
+Static
+access modifiers
+OOP
+Encapsulation
+
+Branch Strategy
+Team Collaboration
+Git Live Demo
+__________________________________________________________________
+
+constructor
+
+    a constructor is a special kind of method that is called when new keyword is used, so the code in the constructor is executed whenever an object of that class is created
+
+    the constructor uses the same name as the class and does not have a return type
+
+    constructors are used to initialize instance variables and run other code that would set the object up
+
+    if no constructor is made by you a default constrictor will always be given by the compiler. It will be a no argument constructor
+
+constructor chaining allows constructor to call another constructor
+
+    constructors can be overloaded by changing the parameters
+
+    using this(): call one of the overloaded constructors to avoid repeating code
+        rules:
+        the constructor call must be on the first line with valid arguments
+        the constructor should not call or contain themselves at any point
+
+this vs this()
+    this: used to reference the current class objects
+    this(): used to call a different constructor in the same class
+__________________________________________________________________
+
+static
+
+    keyword that allows us to define members that belong to the class
+        opposite of instance which are members that belong to the object
+
+    biggest difference between instance & static is how to use the members:
+
+        instance members:
+            create an object first, then use
+
+        static members:
+            give the class name to use
+
+static members:
+
+    static variable: a variable that belongs to the class, so there is a single copy it
+       every object has a copy of the instance variables
+
+    static method: a block of code that can be called without an object
+        -> used in utility classes
+            these class have useful methods, and because they are static we can call them by the class name
+
+    static blocks
+        this block runs once, before anything else when the class is loaded(used) for the first time
+
+    static import
+        static import allows you to access one specific static member without giving the class name
+
+        syntax:
+            import static packageName.className.staticMember;
+                or
+            import static packageName.className.*;
+                wildcard allows you to access all static members in that class
+__________________________________________________________________
+
+access modifiers
+
+    keywords used to define the scope or visibility (where you can use/access the variables, methods, etc]
+
+    [Most Visible] public  -> protected  -> default -> private [Least Visible]
+
+    -> we will come back to protected and default later
+
+    public: accessible everywhere in the project
+
+    private: accessible only in the same class
+__________________________________________________________________
+
+Encapsulation
+
+What is OOP?
+
+    Object Oriented Programming: the concepts that define how an object behaves
+        the paradigm is the approach for how the code is designed
+        with OOP we create classes based on real world objects
+
+    encapsulations allow you to hide your information from direct access. We are able to limit the access to variables by using the private keyword and allowing PUBLIC getters and setters
+
+    getter: method used to get the value of that specific variable
+
+    setter: method used to change/resign the value of that specific variable
+
+    another definition: encapsulation is the grouping of data and methods into a unit
+
+__________________________________________________________________
+=====================================================================================
+
+Git Notes
+
+Branch Strategy
+Team Collaboration
+__________________________________________________________________
+
+Git Branching Strategy
+
+master
+    develop
+        feature-a
+        feature-b
+
+Flow from our side:
+
+    -> assume you cloned the project/ make sure your project is up to date
+
+    create a new feature branch locally from the develop branch / update your feature branch with up to date develop branch
+
+    create some changes, then we commit and push to your origin feature branch(if its the first time, the feature branch is created on github)
+
+    create a pull request from your feature branch to the develop branch
+
+    someone approves and merges branches
+
+    repeat above steps for as many feature or changes needed, until a stable version of that application or sprint finishes then
+
+        team creates pull request from develop to master
+
+__________________________________________________________________
+
+Strategies
+
+    The strategy of how git is used within a team can vary. It depends on the team workflow
+
+master
+    develop
+        feature
+
+    + multiple versions
+    - can become complex & increase deployment cycles
+
+master
+    feature
+
+    + better for smaller teams
+    + simpler design
+    - only handles one version
+    - more room for bugs. Testing is done on feature branch then merged to master
+
+production
+    release
+        master
+
+    + multiple environments maintained
+    - not all teams/projects will need multiple versions in different environments
+
+Trunk based
+master
+    no other branch. Commit to master
+
+    + allows continuous integration
+    + always ready for release
+    - best used in small experienced teams
+__________________________________________________________________
+
+Team Collaboration
+
+Team Lead or one selected person: (Set up)
+
+    Create a new java project and enable git
+    Create a .gitignore file and add the main folders to ignore
+        files: out, *.iml, .idea
+    Create a package called utils
+    Create a class called MainUtils
+    Commit the .gitignore and MainUtils files
+    Create the remote repository by sharing the project
+    Create a new branch from master called develop on the remote repository (on github)
+    Invite all team members by going to project settings -> manage access
+
+Other Team Members:
+
+    Go to email or GitHub and accept invite to collaborate with the new repository
+    On the remote repository page find the code button and copy the given link
+    Use the given link to clone the project
+
+Now there is a remote repository and everyone has the project locally
+
+--> After cloning open the git log. right click on the origin develop branch and checkout. This will create a local develop branch
+
+Steps to repeat:
+
+    Update local project with changes from other team members
+    In the local repositories create a new branch from the develop branch
+        - for this practice use your name for each personal branch
+    Makes some changes by adding files or updating a file (work in separate files to avoid conflicts)
+    Commit local changes and push to your origin branch (DO NOT PUSH TO DEVELOP OR MASTER BRANCH)
+    On GitHub create a pull request to merge the changes from your branch to the develop branch.
+    Assign a team member to review and approve
+
+            - If you are assigned a pull request view the commits of your team members. Discuss and if there is no problem approve the pull request
+
+            - Pick assignments of who will review your PR ahead of time, and make sure everyone is assigned so everyone in the group is able to practice both parts
+
+Every team member should go through the flow with the team to do some basic practice right now. When projects for automation start you will need to use git on top of the testing you will need to do, so practice the core git now without worrying about the other parts.
+
+Whole group:
+
+    When you feel there is enough commits made to the develop branch make a pull request merge develop into the master branch
+    Everyone should update their projects before making any more changes
+    Repeat all of the above as many times as needed
+
+__________________________________________________________________
+
+
