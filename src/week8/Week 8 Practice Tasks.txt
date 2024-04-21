@@ -40,7 +40,6 @@ Planet [class, object, constructor, encapsulation]
 
        methods:
             - travel(): calculate how many year it will take to travel to the planet
-                formula: distance from 72000000
             - toString()
                 return all the Planet information
 

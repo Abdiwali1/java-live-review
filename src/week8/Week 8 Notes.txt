@@ -81,6 +81,11 @@ static members:
                 or
             import static packageName.className.*;
                 wildcard allows you to access all static members in that class
+
+Math.var
+Arrays.method
+
+ArrayList.something <- never did this. make an object new ArrayList() -> use that object
 __________________________________________________________________
 
 access modifiers

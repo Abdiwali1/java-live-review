@@ -1,7 +1,12 @@
 package week8;
 
+import static java.lang.Math.*;
+import static java.util.Arrays.sort;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+
 
 public class UseFood {
     public static void main(String[] args) {
@@ -53,6 +58,17 @@ public class UseFood {
             }
         }
 
+        System.out.println(Math.PI);
+        Arrays.sort(foods);
+
+        System.out.println(PI); // because I used the static import, I can access the variable without the class name
+        sort(foods);
+
+        /*
+        import static java.lang.Math.*;
+        import static java.util.Arrays.sort;
+
+         */
     }
 }
 /*
