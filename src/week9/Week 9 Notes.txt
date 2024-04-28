@@ -90,6 +90,9 @@ IQ: What is the difference between method overloading and overriding
     overriding: changing the implementation of a method that came from the super class
         -> happens between the super and sub class
 
+	high level:
+		these concepts allows methods to dynamically be used throughout our projects. Method overloading helps to create multiple methods that share a similar name making it easier to group similar related functionality but also gives the benefit of different ways to call those methods based on the different parameters we define. Method overriding allows us to take an functionality that was inherited and change that implementation to better suit the sub classes. In this case we are not create more methods, but instead we are able to just change those those same methods worked in specific sub classes
+
 IQ: How can you override static methods?
 	static methods cannot be overridden, it is possible to declare a method with the same name in the sub class, but this is called method hiding, not overriding.
 
@@ -156,3 +159,18 @@ final
 			yes
 
 __________________________________________________________________
+
+we write:
+
+	class Animal {
+		
+	}
+
+what is actually there:
+
+	class Animal extends Object {
+		public Animal(){
+			super();
+		}
+	}
+
