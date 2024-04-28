@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 public final class Garden extends Land {
 
+    // Garden is a Land
+    // Garden has a ArrayList
+
     private String location;
     private ArrayList<Plant> plants;
 
