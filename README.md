@@ -13,13 +13,13 @@
 
 [IntelliJ](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#intellij)
 
-[Java Basics](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#intellij)
+[Java Basics](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#java-basics)
 
 [Variables](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#variables)
 
 [Operators](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#operators)
 
-[Conditional Statements](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#variables)
+[Conditional Statements](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#conditional-statements)
 
 [Scanner](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#scanner)
 
@@ -29,9 +29,9 @@
 
 [Loops](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#loops)
 
-[Array](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#loops)
+[Array](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#array)
 
-[Custom Classes](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#loops)
+[Custom Classes](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#custom-classes)
 
 [Wrapper Classes](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#wrapper-classes)
 
