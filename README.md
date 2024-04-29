@@ -7,57 +7,47 @@
 ## Table of Contents:
     Click to go directly to the section
 ---
-[Shortcuts](https://github.com/Cydeo-SD-US034/java-live-lab/blob/master/README.md)
+[Shortcuts](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#shortcuts)
 
-[Introduction to Programming](https://github.com/Cydeo-B32/java-live-review/blob/master/Cheatsheet.md#introduction-to-programming)
+[Introduction to Programming](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#introduction-to-programming)
 
-[IntelliJ](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#intellij)
+[IntelliJ](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#intellij)
 
-[Java Basics](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#intellij)
+[Java Basics](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#intellij)
 
-[Variables](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#variables)
+[Variables](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#variables)
 
-[Operators](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#operators)
+[Operators](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#operators)
 
-[Conditional Statements](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#variables)
+[Conditional Statements](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#variables)
 
-[Scanner](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#scanner)
+[Scanner](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#scanner)
 
-[String](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#string)
+[String](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#string)
 
-[Methods](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#methods)
+[Methods](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#methods)
 
-[Loops](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#loops)
+[Loops](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#loops)
 
-[Array](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#loops)
+[Array](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#loops)
 
-[Custom Classes](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#loops)
+[Custom Classes](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#loops)
 
-[Array](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#loops)
+[Wrapper Classes](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#wrapper-classes)
 
-[Wrapper Classes](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#wrapper-classes)
+[ArrayList](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#arraylist)
 
-[ArrayList](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#wrapper-classes)
+[Constructor](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#constructor)
 
-[Constructor](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#constructor)
+[Static](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#static)
 
-[Static](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#static)
+[Access Modifier](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#access-modifiers)
 
-[Access Modifier](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#access-modifiers)
+[Encapsulation](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#encapsulation)
 
-[Encapsulation](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#encapsulation)
+[Inheritance](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#inheritance)
 
-[Inheritance](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#inheritance)
-
-[Method Overriding](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#method-overriding)
-
-[Exceptions](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#exceptions)
-
-[Abstraction](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#abstraction)
-
-[Polymorphism](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#polymorphism)
-
-[Collection Framework](https://github.com/Cydeo-B32/java-live-review/blob/master/README.md#collections-framework)
+[Method Overriding](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#method-overriding)
 
 ---
 ## Shortcuts
