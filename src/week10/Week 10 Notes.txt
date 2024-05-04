@@ -1,0 +1,314 @@
+5/4/24
+
+Week 10
+Java Day14 - OOP Abstraction & Polymorphism (2 module: 43 & 44)
+Java Day15 - Exceptions & Errors (1 module: 46)
+__________________________________________________________________
+
+Abstraction
+
+	concept for hiding implementation. Allow us to focus on WHAT the functionality is (action/method), but not worry about HOW its done (implementation)
+
+in java there is two ways to achieve abstraction with abstract methods:
+	abstract class
+	interface
+
+	abstract methods
+
+		a method without any implementation (a method with no code body)
+			ex:
+			public abstract void rotate();
+
+		-> these methods must be overridden in the sub classes at some point
+
+	concrete class: first non-abstract class (normal class). This class must implement all abstract that are inherited
+
+Abstract Class
+
+	a class that is defined with the abstract keyword
+
+		ex: public abstract class Planet {}
+
+	-> an abstract class is able to define abstract methods
+	-> this class cannot instantiated (cannot create objects from this class)
+
+	everything else about the classes is the same
+
+Q: Can you make non abstracts methods in an abstract class
+	yes, you can make instance methods or static methods
+
+Q: Can you have an abstract class without any abstract methods
+	yes, you are allowed to create abstract methods, but it doesn't require you to make any
+
+Interface
+
+	interface is NOT a class. An interface is a blueprint for a class
+		- Cannot be instantiated
+
+	Allows creation of abstract method
+		any method declared is abstract automatically
+
+	implementing an interface creates an is a relation
+		implements keyword is used to inherit the abstract methods from the interface
+
+	everything uses public access modifier automatically
+
+	variables: any variable declared is public static final automatically (constant variable)
+		-> interface do not have any instance variables
+
+What does an interface have
+	constant variables, abstract methods, static methods, default methods
+
+What does an interface NOT have
+	instance variables, instance methods, constructor, blocks of code (static block)
+
+Q: Can we have any non-abstract methods in interface?
+Q: Can we have any methods with implementation/code block in interface?
+
+	static and default methods allow creation of methods that have implementation
+
+	static: a method with code body and it is accessed by the interface name
+		-> these methods are not inherited
+
+	default: a method with a code body and it is accessed by the object of the class that is implementing the interface
+
+		instance level for the class that implements
+
+		-> this is not the default access modifier. It is a keyword for these methods. Default methods are only created in interface
+
+Inheritance with interface
+
+	interface is not a class, which means it doesn't follow all the same rules
+
+		-> classes can only have one parent, but interface doesn't need follow that
+
+		- a class can implement as many interfaces as needed
+		- an interface can inherit as many interfaces as needed
+
+How to use the interfaces
+
+	class --> class: extends
+	interface --> class: implements
+	interface --> interface: extends
+__________________________________________________________________
+
+Abstract class vs Interface
+
+	both:
+		cannot create objects
+		can create abstract methods
+		can create static methods
+		create an is a relation
+		can be inherited
+
+	abstract class:
+		can have constructors
+		can have instance variables
+		can have instance methods
+		can have blocks of code: static block
+		can use any access modifier
+		can only have one parent
+		static variables that are not final
+
+	interface:
+		public is the access modifier used by default
+		methods created are abstract by default
+		variables created are static final (constant)
+		multiple interface can be implemented to a class - or - inherited to another interface
+		static methods are not inherited
+		can create default methods
+
+	putting it all together:
+
+		both are useful to achieve abstraction, but interface is the preferred way because of the ability to implement many interfaces. Abstract class works like a normal class for the most part, so it still follows the inheritance rules of only having one parent. Interfaces do not need to follow the rule of multiple inheritance because they are not a class and have their own properties. Methods created in an interface are abstract by default, but there are a few options to create non-abstract methods.
+
+__________________________________________________________________
+
+Polymorphism
+
+	objects are able to take different forms through their references
+
+	Quote from a previous student: "Like a woman at the same time is a mother, a wife, an employee. So the same person possesses different behavior in different situations" - Milana B27
+
+What are the possible references of an object
+
+		public interface Driveable{}
+		public class Street implements Driveable{}
+
+	itself: the reference is the same type as the object
+		Street obj = new Street();
+
+	any super class: any direct or indirect super class can be a reference
+		Object obj = new Street();
+
+	any implemented interface
+		Driveable obj = new Street();
+			- this is a Street object, but with a reference of the Driveable interface
+
+	is a relation helps us understand which references an object can have
+
+access & execution
+	The reference needs to have access to the field
+	but the execution happens on the object
+
+Benefit of polymorphism
+
+	To limit what you have access to, so you interact with the most important components
+
+	the other references(especially the interface reference), allow us to be more flexible when using objects
+
+	polymorphic data structures: store different object types together if they share an inheritance relationship
+
+	with methods: the parameter and returns can be super references or interface references which allow the methods to be more flexible
+
+instanceOf
+	keyword that can find the type of the object
+
+		real use case example:
+			reading from excel
+			values are given back as Object
+
+			if(cell instanceOf String){
+				// String
+			} else if(cell instanceOf Integer){
+				// parse
+			}
+
+Reference casting
+
+    able to cast/change the reference of the object to a different reference type
+
+    upcasting: from a sub class to a super class
+        automatically/implicitly
+
+    downcasting: from a super class to a sub class
+        manually/explicitly
+
+    real use case example:
+	WebDriver driver = new ChromeDriver();
+
+	scenario: fail the test, so we want to take a screenshot
+
+	    driver -> this is the WebDriver interface, but WebDriver interface does not have access to the screenshot method
+
+	    ((TakesScreenShot)driver).takeScreenShot() --> the reference was cast to the TakesScreenShot interface, which has access to the takeScreenShot method. Now we can execute the method
+
+Static & Dynamic Polymorphism
+
+static polymorphism / static binding / compile time binding
+    example of this: method overloading
+
+dynamic polymorphism / dynamic binding / run time binding
+    example of this: method overriding
+
+    calling a method and executing are different and they are not linked.
+    You can call a method anywhere
+    execution happens during runtime
+__________________________________________________________________
+
+Exceptions
+
+What is an exception
+
+	stops the normal flow of execution because of some code
+	we will handle these or fix the code that is causing the exception
+
+Exceptions are objects
+
+Inheritance of Exceptions
+	Throwable
+		Exception -> checked exceptions
+			RuntimeException -> unchecked exceptions
+
+Types of exceptions:
+
+	checked/compile time
+
+		these exceptions MUST be handled for the program to compile
+
+		Ex: Thread.sleep(), working with files
+
+	unchecked/run time
+
+		an exception that could occur during execution
+		You can handle or fix the code
+
+		Ex: StringIndexOutOfBounds, NullPointerException
+
+How to handle exceptions
+
+	try/catch block
+
+		the try block is for any code we want to run, that could cause an exception
+
+			try {
+
+			}
+
+		the catch block allows us to determine what code should be run if the specified exception is thrown
+
+			(catch Exception e)
+				Note: 'e' is commonly used as the reference name
+
+			Ex: catch(NullPointerException e)
+
+    multiple catch blocks
+
+        it is possible to have multiple catch blocks to handle different kinds of exceptions
+
+        -> Note: you want to make the exceptions as specific as possible to not allow unexpected exceptions to be handled
+
+        rule: order of the catch blocks does matter. The Exceptions should be most specific at the top and become more general towards the end
+
+    finally block:
+
+        its optional to add to try/catch
+
+        this code block will run no matter, regardless if there is an exception or not
+
+Useful exception methods
+
+    getMessage():
+    	returns a String of the message component of the exception
+
+    printStackTrace():
+    	prints the stack trace of the exception to the console
+
+    getStackTrace():
+    	returns an array of stack trace elements
+
+	------------------------------------------------------------------------
+
+IQ: What is the difference between final, finally, finalize()?
+
+	final: variables cannot be changed, class cannot be inherited, and methods cannot be overridden
+
+	finally: block of code used with the try catch. It always runs no matter if there is an exception or not
+
+	finalize(): a method called by the garbage collector to help clean the memory
+
+__________________________________________________________________
+
+throw vs throws
+
+    throws: keyword that allows you to ignore an exception
+
+        this is NOT handling the exception, but it allows you to compile
+
+        	-> if you use throws you are accepting that an exception can happen
+
+        used in the method signature line
+        syntax:
+        	method() throws Exception {}
+        Ex:
+        	public static void main(String[] args) throws InterruptedException{ }
+
+    throw: causes an exception to happen, must throw an Exception type object
+    	syntax:
+    		throw new ExceptionObject();
+
+        Ex:
+        	throw new IllegalArgumentException();
+
+__________________________________________________________________
+
