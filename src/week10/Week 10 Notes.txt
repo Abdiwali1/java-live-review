@@ -57,7 +57,7 @@ Interface
 		-> interface do not have any instance variables
 
 What does an interface have
-	constant variables, abstract methods, static methods, default methods
+	constant variables, abstract methods, static methods, default methods, private method
 
 What does an interface NOT have
 	instance variables, instance methods, constructor, blocks of code (static block)
@@ -76,7 +76,7 @@ Q: Can we have any methods with implementation/code block in interface?
 
 		-> this is not the default access modifier. It is a keyword for these methods. Default methods are only created in interface
 
-Inheritance with interface
+Inheritance with interface    
 
 	interface is not a class, which means it doesn't follow all the same rules
 
@@ -126,7 +126,7 @@ __________________________________________________________________
 
 Polymorphism
 
-	objects are able to take different forms through their references
+	objects are able to take different forms through their references 
 
 	Quote from a previous student: "Like a woman at the same time is a mother, a wife, an employee. So the same person possesses different behavior in different situations" - Milana B27
 
