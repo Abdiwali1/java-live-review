@@ -36,6 +36,5 @@ public class DemoIterator {
             System.out.println(eachEntry.getValue());
         }
 
-Iterable
     }
 }
