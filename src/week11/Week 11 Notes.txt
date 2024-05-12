@@ -1,0 +1,363 @@
+5/12/2024
+
+Week 11
+Java Day 16 - Collections (2 modules: 47, 48)
+Java Day 17 - Maps (1 module: 49)
+
+Git Day04 - Git Commands (review next week)
+__________________________________________________________________
+
+Congratulations on completing the Java module of the program!
+
+As you prepare for the next steps in your journey with us, we would like to hear about your experience with this module.
+
+Our goal is to grow together with you. All your input will be used to support our mutual development.
+
+This reflection takes up to 2 minutes to complete and will help us to further improve and enhance the program - to tailor the best experience for you and other students.
+
+Thanks!
+
+Java Module Completion: https://forms.gle/cCGgvSsKLzZ9EPHw5
+__________________________________________________________________
+
+Next Week: Self Study Week
+	No new class recordings. Practice sessions and Lab will continue at regular times
+	We will have live review on the Sunday, May 19th to review git & agile experience session in the afternoon
+		This will be my last Sunday review, and we will take a class photo
+
+Week 13: Automation classes will start
+
+Remaining sessions during automation weeks (week 13/14):
+	PWS (5/20)
+	PWS (5/21): Last PWS session
+	Lab (5/22): Git
+	Lab (5/29): Last Java Lab
+
+Extra Topic Short Videos: Enums, Generics, Functional Interface, Lambda Expressions, Stream
+__________________________________________________________________
+
+Collection framework
+List
+Set
+Thread & Synchronization
+Stack
+Queue
+Iterable
+Map
+__________________________________________________________________
+
+Collection Framework
+
+    group of interface and classes which define and implement different algorithms for working with data. These collections are data structures that will store, remove, and get data in different ways
+
+    The collection framework is created with inheritance, abstraction, and polymorphism
+
+Main interface of the framework
+
+    Collection: the parent of the Collection types. Defines the main functions of a collection
+        ex: add, remove, size
+
+    List: ordered(index), allows duplicates
+
+    Set: unordered(no indexes), does not allow duplicates
+
+    Queue: typically FIFO (First In First Out) order
+
+        Deque: an interface that allows access to elements from the beginning or end
+    child of the Queue interface
+
+    ------------------------------------------------------------------------
+
+    Q: What is the difference between Collection and Collections
+
+        Collection: the main/parent interface in the Collection Framework
+
+        Collections: a utility class that has some useful methods for collection types
+            sort, max, frequency
+
+    ------------------------------------------------------------------------
+
+    What is the advantage of the collection framework
+
+        the different data structures have different implementations of algorithms to solve the problems of working with data
+
+            Ex: add()
+                defined in Collection interface
+                abstract
+
+                ArrayList: add element to to the end of internal array
+                LinkedList: create a new node and the tail will have the reference of the new node
+
+        performance:
+            because a certain data structure focuses on one idea it will be able to perform that idea(functionality) efficiently
+
+            adding, removing, searching
+
+        *** Even though there is many collections types, often developers and testers need to only use List or Map types
+
+    ------------------------------------------------------------------------
+
+    What is the benefit of the Polymorphic reference
+
+        references, especially the interface reference allows an object to be flexibly used in methods, constructors, data structures
+
+            new ArrayList<>(Collection c) -> any object that implements the Collection interface can be given as the argument
+
+            public static void m(List<Integer> nums){}
+            public static List<Integer> m(){}
+
+            addAll(Collection c)
+
+    ------------------------------------------------------------------------
+
+    Thread & Synchronization
+
+        process: execution instance of a program
+
+        thread: a sequence of execution within process
+
+        synchronization: multiple threads cannot access at the same time
+            - also known as thread-safe
+            - if multiple threads did try to access something synchronized they would need to access one at a time
+
+        advantage: thread-safe
+        disadvantage: slower
+
+        Ex: multiple people accessing ATM
+
+__________________________________________________________________
+
+Classes that implement List:
+
+    ArrayList: data structure that uses arrays internally. Re-sizeable array
+        useful to storing and reading information
+
+    LinkedList: data structure that uses nodes internally.
+        also implements Deque -> doubly linked
+
+        useful to manipulate the collection. adding or removing is handled efficiently
+
+        Node: an object that has the value, reference to the node before it and reference to node after it
+
+    Vector: legacy version of ArrayList. it is synchronized
+    	if you needed a synchronized collection you can use Collections.synchronizedList()
+
+        Stack: sub class of Vector. Notes below
+
+    ------------------------------------------------------------------------
+
+Classes that implement Set:
+
+    HashSet: follows a Hashing algorithm, which means handles data fast and efficiently
+        data structure that uses HashMap internally
+
+        the order is basically random
+
+    LinkedHashSet(): data structure that uses HashTable and LinkedList implementations. sub class of HashSet
+        the insertion order is maintained
+
+Interface: SortedSet extends Set
+
+    TreeSet: implements the SortedSet
+        Elements are stored in the natural order(sorted order, smallest to largest, lexicographical)
+        null is not allowed
+__________________________________________________________________
+
+Stack vs Queue
+
+Stack
+    sub class of Vector
+
+    LIFO: Last In First Out
+        ex: stack of books
+
+    push(): adding the element to the top of the stack. also returns the element added
+    pop(): removing the element at the top of the stack. also returns that element removed
+    peek(): returns the element at the top of the stack
+
+Queue
+
+    Queue is an interface inheriting the Collection interface
+
+    FIFO: First In First Out
+        ex: a line of people
+
+        add() <--> offer()
+        remove() <--> poll()
+        element() <--> peek()
+
+        The methods on the left can cause an exception to occur whenever the method fails
+        The method on the right just return null
+
+    ------------------------------------------------------------------------
+
+Classes that implement Queue
+
+    PriorityQueue: data structure that stores elements based on natural order
+
+        does not accept null
+
+    Note: Even though Queue is the interface the PriorityQueue has its own implementation of the idea
+
+    ArrayDeque: implementing Deque. FIFO implementation
+        also has access to both side of the collection
+
+        does not accept null
+__________________________________________________________________
+
+Iterable
+
+    interface
+    parent of the Collection interface
+
+    any data structure that implements the Iterable, which is any data structure that implements Collection interface, can be iterated with a for each loop
+
+    The interface defined this abstract method:
+
+        Iterator<T> iterator();
+
+        this abstract method was implemented in the collection classes. The methods returns an iterator object which allows us to iterate through the elements one at a time using the methods of the iterator. It iterates through from beginning to end
+
+        -> think of the iterator as a pin
+        -> when the iterator is set up the starting point is BEFORE the first element
+
+    methods:
+
+        hasNext(): returns boolean. checks if there is any element next to the current position of the iterator(pin)
+
+        next(): returns the element. first moves the iterator to the next element and it returns that element
+
+        remove(): remove the element at the current iterator position
+
+__________________________________________________________________
+
+Map
+
+    interface that does NOT inherit the Collection interface
+
+    Map is still part of the java collection framework
+
+    the main idea of this interface is the key / value format for data
+
+        Entry: key / pair
+
+        each key is linked to some value
+
+        -> keys must be unique
+        -> values can be duplicate
+
+Syntax:
+
+    Map < keyDatatype, valueDatatype > referenceName = object
+
+    Map<Integer, String> map = new HashMap<>();
+
+Classes that implement the Map interface
+
+    HashMap: order the entries is not guaranteed (random order)
+
+        using hashing algorithm (fast and efficient)
+
+    LinkedHashMap: insertion order of the entries is maintained
+
+    TreeMap:
+        implements SortedMap (interface)
+
+        The entries are sorted in a natural order(based on the keys)
+            -> ascending order, smallest to biggest, lexicographical
+
+        null key is not allowed
+
+    HashTable: the order is not guaranteed (random order)
+        legacy class -> inheriting Dictionary
+        synchronized (thread - safe)
+        both null keys and values not allowed
+
+    ------------------------------------------------------------------------
+
+Methods:
+
+    put(key, value):
+        takes the key and value and stores that entry into the map
+
+        -> if the key already exists the value will be updated(reassigned) because the key must be unique
+
+    get(key):
+        returns the value that is linked to the given key
+
+        -> what if the key does not exist? it returns null
+
+    remove(key)
+        uses the key to determine which entry to remove
+
+    containsKey(key)
+        returns boolean based on if the map has that key defined
+
+    containsValue(value)
+        returns boolean based on if the map has the value defined
+
+    ------------------------------------------------------------------------
+
+Looping through a Map:
+
+    can we use for each loop directly with the map
+        no, it does not implement Iterable
+
+        Map<String, Double> map = new HashMap<>();
+
+        for(type : map) <- just this does not work
+
+    keySet(): returns a Set of keys
+
+        then we can iterate through the keys and use those to read the value
+
+        for(String key : map.keySet()){}
+
+    values(): returns all the values of the map
+
+        for(String value : map.values()){}
+
+    entrySet(): returns all the entries of map
+
+        for(Map.Entry<String, Double> entry : map.entrySet()){}
+
+        methods to access information from the entry:
+            getkey()
+            getValue()
+__________________________________________________________________
+
+DB example
+
+        /*
+            Person
+                FIRST_NAME James
+                LAST_NAME Bond
+                AGE 40
+         */
+
+        Map<String, String> person1 = new HashMap<>();
+        person1.put("FIRST_NAME", "James");
+        person1.put("LAST_NAME", "Bond");
+        person1.put("AGE", "40");
+
+       	List<Map<String, String>> allPeople = new ArrayList<>();
+        allPeople.add(person1);
+
+        // I want to know the first name
+        System.out.println(allPeople.get(0).get("FIRST_NAME"));
+
+        /*
+            allPeople -> ArrayList
+            allPeople.get(0) -> First Map object
+            allPeople.get(0).get(FIRST_NAME) -> value of first name
+         */
+
+    Then actual db code:
+
+          List<Map<String,Object>> dataList = new ArrayList<>();
+
+__________________________________________________________________
+
+
+
+

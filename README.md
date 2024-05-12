@@ -49,6 +49,14 @@
 
 [Method Overriding](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#method-overriding)
 
+[Abstraction](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#abstraction)
+
+[Polymorphism](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#polymorphism)
+
+[Exceptions](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#exceptions)
+
+[Collections Framework](https://github.com/Cydeo-SD-US034/java-live-review?tab=readme-ov-file#collections-ramework)
+
 ---
 ## Shortcuts
 ```
@@ -1394,4 +1402,352 @@ use 'is a' relation to describe how classes are connected
 		When you try to make a method with the same name and parameters it is doing method hiding
 		It means you are creating a new method with the same name, in the sub class
 		Because these are static you have access to both static methods with the same name, because each is accessible by their class
+---
+
+## Abstraction:
+
+	process that hides implementation. We can focus on the main idea of WHAT is function(action, but not worry about HOW its done (implementation)
+
+	implementation: the function of the code, how the code actually is used
+
+	concrete class: first non-abstract class (normal class). This class must implement all abstract that are inherited
+
+#### in java there is two ways to achieved abstraction
+
+	abstract class
+	interface
+
+#### abstract methods
+
+	a method without any implementation (a method with no code body)
+
+	ex:
+		public abstract void rotate();
+		-> where/ how is this method used?
+
+			in the sub classes/concrete classes this method would be overridden and then it can be used by the sub class object
+
+#### abstract class
+    a class that is defined with the abstract keyword
+
+	ex: public abstract class Planet {}
+
+		-> the abstract class is able to define abstract methods
+		-> you cannot instantiate this class (cannot create objects from this class)
+
+	everything else about the classes is the same
+
+#### Interface
+
+	interface is NOT a class. An interface is a blueprint for a class
+
+	it is possible so create abstract methods
+	you cannot create an object of the interface
+
+	implementing an interface creates an is a relation
+
+	so how do you create an interface
+		it is in the .java file
+
+		public interface NAME  {}
+		where the NAME is the name of the interface
+
+	everything uses public access modifier automatically	
+
+	methods: any method declared is public abstract automatically
+
+	variables: any variable declares is public static final automatically 
+		-> constant variables are static final
+		-> interface do not have any instance variables
+
+#### What does an interface have
+
+	constant variables, abstract methods, static methods, default methods
+
+#### What does an interface NOT have
+
+	instance variables, instance methods, constructor, blocks of code
+
+#### Methods with implementation in interface:
+
+	static: a method with code body and it is accessed by the interface
+
+		-> these methods are not inherited
+
+		static level at the interface
+
+	default: a method with a code body and it is accessed by the object of the class that is implementing the interface
+
+		instance level for the class that implements
+
+		-> this is not the default access modifier. It is a keyword for these methods. Default methods are created only in interface
+---
+
+## Polymorphism
+
+	the object taking different forms by the reference
+
+#### What are the possible references
+
+	itself: the reference is the same type as the object
+
+	any super class: any direct or indirect super class can be a reference
+
+	any implemented interface
+
+#### Benefit of polymorphism
+
+	To limit what you have to access, only so you interact with the most important components
+
+	the other references(especially the interface reference), allow us to be more flexible with other code components
+
+	polymorphic data structures (ex: arrays) store different objects are the still somewhat similar
+
+	with methods: the parameter and returns can be super reference or interface reference which means that method is flexible
+
+#### instanceOf
+	keyword that can find the type of the object
+---
+
+## Exceptions
+
+#### What is an error
+
+	stops the execution, but it caused by factors outside of the side
+	so, we don't handle them
+
+#### What is an exception
+
+	stops the normal flow of execution because of some code
+	we will handle these
+
+#### Inheritance of Exceptions
+
+	Throwable
+		Exception -> checked exceptions
+			RuntimeException -> unchecked exceptions
+
+#### Exceptions are objects
+
+	common methods of the objects:
+    	getMessage():	returns a String of the message component of the exception
+    	printStackTrace():	prints the details about the exception to the console
+
+#### Types of exceptions:
+
+	checked/ compile time
+		these exceptions MUST be handled for the program to compile
+
+		Ex: Thread.sleep()
+			Note: this method accepts the millisecond argument to pause the execution for that time
+
+	unchecked/ run time
+		an exception that could occur and when it does it happens during execution. 
+		You can handle or fix the code
+
+		Ex: StringIndexOutOfBounds, NullPointerException
+
+#### How to handle exceptions
+
+	try/catch block 
+
+	you are able to run code in the try block
+	and then we are able to define possible exceptions that could happen in the catch block
+		-> if the exception occurs the catch block will handle it by running whatever code was defined in the catch block
+
+		catch block: 
+			when we set up a catch block we are defining the type of exception that will be thrown so we create a reference of that object using
+			(exception name)
+				Note: 'e' is commonly used as the name
+				this part acts like a parameter for that block
+			
+			Ex: catch(NullPointerException e)
+
+    finally block:
+        its optional to add to try/catch
+        this code block will run no matter, if there is an exception or not
+
+#### throw vs throws
+
+    throws: keyword that allows you to ignore an exception
+        this is NOT handling the exception, but it allows you to compile
+        -> if you use throws you are accepting that an exception can happen
+
+        used in the method signature line
+        syntax:
+        	method() throws Exception {}
+
+        Ex:
+        	public static void main(String[] args) throws InterruptedException{ }
+
+    throw: causes an exception to happen, must throw an Exception type object
+    	syntax:
+    		throw new ExceptionObject();
+        Ex: 
+        	throw new IllegalArgumentException();
+
+---
+
+
+## Collections Framework
+
+    a group of interfaces and classes that define data structures that handle data differently. 
+        They define how data is added, or read from etc, based on different algorithms and implementations
+
+### Main interface of the framework
+
+    Iterable: parent of the Collection interface. Allows data structures to be iterated with a for each loop. Defines the iterator method
+
+    Collection: child of Iterable. The parent of the Collection types. Defines the main functions of a collection
+        ex: add, remove, size
+
+    List: ordered(index), allows duplicates 
+
+    Set: unordered(no indexes), not allow duplicates
+        SortedSet: child of Set. has the idea of sorting
+
+    List: ordered(index), allowed duplicates
+
+    Queue: typically FIFO (First In First Out)
+
+        null not allowed because there are additional methods defined that return null
+
+        Deque: working with data from beginning and end of the collection
+            Ex: methods: addFirst, removeLast()
+
+    Map: stores information using keys and values
+        DOES NOT INHERIT THE COLLECTION INTERFACE, but still considered a part of the collection framework
+
+### Classes that implement List:
+
+    ArrayList: data structure that uses arrays internally. Re-sizeable array
+        useful to storing and reading information
+
+    LinkedList: data structure that uses nodes internally.
+        also implements Deque -> doubly linked
+
+        useful to manipulate the collection. adding or removing is handled efficiently 
+
+        Node: an object that has the value, reference to the node before it and reference to node after it
+
+    Vector: legacy version of ArrayList. it is synchronized
+        -> synchronization: 
+            thread safe: multiple threads cannot access at the same time
+
+    Stack(class): LIFO (Last In First Out) -> child of Vector
+        methods related to LIFO:
+    
+        push(): adding the element to the top of the stack. also returns the element added
+        pop(): removing the element at the top of the stack. also returns that element removed
+        peek(): returns the element at the top of the stack
+
+### Classes that implement Set:
+
+    HashSet: follows a Hashing algorithm, which means handles data fast and efficiently
+        data structure that uses HashMap internally
+
+        the order is random to view, but is based on its own algorithm
+
+    LinkedHashSet(): data structure that uses HashTable and LinkedList implementations. sub class of HashSet
+        the insertion order is maintained
+
+    TreeSet: implements the SortedSet
+        Elements are stored in the natural order(sorted order, smallest to largest, lexicographical)
+
+        null is not allowed
+
+### Classes that implement Queue
+
+    PriorityQueue: data structure that stores elements based on its own priority. Sometimes looks like natural order, but cannot be predicted (random)
+
+        does not accept null
+
+    ArrayDeque: implementing Deque. More proper queue type
+        also has access to both side of the collection
+
+        does not accept null
+
+    Methods:
+        
+            add()       -----       offer()
+            remove()    -----       poll()
+            element()   -----       peek()
+        
+            The methods on the left can cause an exception to occur whenever the method fails
+            The method on the right just return null
+
+### Iterable
+
+    any data structure that implements the Iterable, which is any data structure that implements Collection interface, can be be iterated with a for each loop
+
+    The interface defined this abstract method:
+
+        Iterator<T> iterator();
+
+        this abstract method was implemented in the collection classes. The methods returns an iterator object which allows us to iterate through the elements one a at a time using the methods of the iterator. It iterates through from beginning to end
+
+        -> think of the iterator as a pin
+        -> when the iterator method is called the start point is BEFORE the first element
+
+    methods:
+        hasNext(): returns boolean. checks if there is any element next to the current position of the iterator(pin)
+        next(): returns the element. first moves the iterator to the next element and it returns that element
+        remove(): remove the element at the current iterator position
+
+### Classes that implement the Map interface
+    the main idea of this interface is the key / value format
+        Entry: key / pair
+        each key is linked to some value
+
+        -> keys must be unique
+        -> values can be duplicate
+
+    Syntax:
+        Map < keyDatatype, valueDatatype > referenceName = object
+        Map<Integer, String> map = new HashMap<>();
+
+    HashMap: order the entries is not guaranteed (random order)
+        using hashing algorithm (fast and efficient)
+
+    LinkedHashMap: insertion order of the entries is maintained
+
+    TreeMap: 
+        implements SortedMap (interface)
+
+        The entries are sorted in a natural order(based on the keys)
+            -> ascending order, smallest to biggest, lexicographical 
+
+        null key is not allowed
+
+    HashTable: the order is not guaranteed (random order)
+        legacy class -> inheriting Dictionary
+        synchronized (thread - safe)
+        both null keys and values not allowed
+---
+### Looping through a Map:
+
+    can we use for each loop directly with the map
+        no, it does not implement Iterable
+
+        Map<String, Double> map = new HashMap<>();
+
+        for(type : map) <- just this does not work
+
+    keySet(): returns a Set of keys
+
+        then we can iterate through the keys and use those to read the value
+
+        for(String key : map.keySet()){}
+
+    values(): returns all the values of the map
+
+        for(String value : map.values()){}   
+
+    entrySet(): returns all the entries of map
+
+        for(Map.Entry<String, Double> entry : map.entrySet()){}   
+
+        methods to access information from the entry:
+            getkey()
+            getValue()
 ---
